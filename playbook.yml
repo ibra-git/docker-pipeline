@@ -6,9 +6,9 @@
         state: present
       when:
       - ansible_distribution == "CentOS"
-    - name: install python3-docker ubuntu
+    - name: install python-docker ubuntu
       apt:
-        name: python3-docker
+        name: python-docker
         state: present
       when:
       - ansible_distribution == "Ubuntu"
@@ -18,7 +18,7 @@
         image: ibadoc/apache-ubuntu:100
         state: started
         published_ports:
-          - 80:80
+          - 9000:80
         recreate: yes
         interactive: yes
         detach: yes
